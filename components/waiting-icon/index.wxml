@@ -1,0 +1,5 @@
+<view class="loading">
+  <view class="loading-icon">.</view>
+  <view animation="{{waiting_animation}}" class="loading-icon">.</view>
+  <view animation="{{waiting_animation_1}}" class="loading-icon">.</view>
+</view>

@@ -1,0 +1,9 @@
+<view wx:if="{{modalShow}}" style="height:100%;width:100%">
+  <view class="modal-wrapper" >
+    <view class="modal-triangle" ></view>
+    <view class="menu-modal">
+      <view wx:for="{{modalItems}}" wx:key="type" class="menu-modal-item  " data-type="{{item.type}}" bindtap="itemTap">{{item.text}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{modalShow}}" class="modal-hidden" bindtouchstart="leaveBubbleModal"></view>

@@ -1,0 +1,20 @@
+{
+  "pages":[
+
+    "pages/index/index",
+
+    "pages/edit/edit"
+  ],
+  "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#FAFAFA",
+      "navigationBarTitleText": "面对面翻译",
+      "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "WechatAI": {
+      "version": "0.0.5",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
+}

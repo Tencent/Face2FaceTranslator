@@ -1,0 +1,37 @@
+/* pages/edit/edit.wxss */
+.edit-container {
+  padding:20px 20px;
+  justify-content:flex-start;
+  -webkit-justify-content:flex-start
+}
+.edit_textarea {
+  max-height:400rpx;
+  width:100%;
+  box-sizing:border-box;
+  font-size:36rpx;
+  line-height:50rpx;
+}
+.tips-wrapper {
+  width:100%;
+  display:flex;
+  display: -webkit-flex;
+  justify-content:space-between;
+  -webkit-justify-content: spacce-between;
+
+  padding: 0 25rpx 0 0;
+  box-sizing: border-box;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.edit-tips {
+  font-size:30rpx;
+  color:#B2B2B2;
+  line-height: 50rpx;
+}
+.img-delete-all {
+  height:30rpx;
+  width:28rpx;
+}
+.delete-content {
+    padding:20rpx 20rpx;
+}

@@ -1,0 +1,17 @@
+<view class="button-wrap {{shadowShow ? 'button-wrap-shadow' : ''}}" hidden="{{hidden}}">
+  <view class="img-big-wrap">
+    <view class="button-container">
+      <view wx:for="{{buttons}}" wx:for-item="button" wx:key="{{button.lang}}" class="button-item">
+        <view  catchtouchstart="streamRecord"
+               catchtouchend="endStreamRecord"
+               data-conf="{{button}}"
+               class="button-press">
+          <span class="text-in-button {{ button.buttonType == 'press' ? 'text-press': '' }}">{{button.buttonText}}</span>
+          <image class="button-background" src="{{buttonBackground[button.lang][button.buttonType]}}"></image>
+        </view>
+        <view class="button-label">{{button.msg}}</view>
+      </view>
+
+    </view>
+  </view>
+</view>

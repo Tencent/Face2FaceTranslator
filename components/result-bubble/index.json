@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modal": "/components/modal/index",
+    "waiting-icon": "/components/waiting-icon/index",
+    "play-icon": "/components/play-icon/index"
+  }
+}

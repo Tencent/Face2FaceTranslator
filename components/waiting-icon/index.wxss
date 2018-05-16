@@ -1,0 +1,9 @@
+
+.loading {
+  position: relative;
+  display: inline;
+}
+
+.loading-icon {
+  display: inline;
+}
