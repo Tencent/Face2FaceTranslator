@@ -23,7 +23,7 @@ let language = [
     type_here:"输入文字",
     bg_content:"请输入翻译内容",
     record_failed:"录制失败",
-    recognize_nothing:"识别内容为空",
+    recognize_nothing:"请说话",
     time_left:"录音输入倒数",
     text_left:"剩余文本长度",
     prompt_time:"提示秒数",

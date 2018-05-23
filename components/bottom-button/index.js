@@ -40,7 +40,6 @@ let buttonBackground = {
 
 Component({
   properties: {
-
     buttonDisabled: {
       type: Boolean,
       value: false,
@@ -49,14 +48,7 @@ Component({
         this.changeButtonType(buttonType)
 
       }
-
     },
-
-    shadowShow: {
-      type: Boolean,
-      value: false,
-    },
-
   },
 
   data: {

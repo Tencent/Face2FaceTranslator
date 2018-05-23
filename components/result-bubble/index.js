@@ -41,6 +41,8 @@ Component({
         // 翻译内容改变触发播放
         if(newVal.autoPlay && newVal.translateVoicePath != oldVal.translateVoicePath){
           this.autoPlayTranslateVoice()
+        } else if(newVal.translateVoicePath == "") {
+          this.playAnimationEnd()
         }
 
       }
@@ -137,6 +139,8 @@ Component({
           index: this.data.index,
         })
       }
+
+
     },
 
     /**

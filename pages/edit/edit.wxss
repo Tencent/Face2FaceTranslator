@@ -1,16 +1,19 @@
 /* pages/edit/edit.wxss */
 .edit-container {
-  padding:20px 20px;
+  position: relative;
+  padding:20px 50rpx 20rpx;
   justify-content:flex-start;
-  -webkit-justify-content:flex-start
+  -webkit-justify-content:flex-start;
+  background-color: #FAFAFA;
 }
 .edit_textarea {
-  max-height:400rpx;
+  flex: 1;
   width:100%;
   box-sizing:border-box;
   font-size:36rpx;
-  line-height:50rpx;
+  line-height:60rpx;
 }
+
 .tips-wrapper {
   width:100%;
   display:flex;
@@ -18,7 +21,7 @@
   justify-content:space-between;
   -webkit-justify-content: spacce-between;
 
-  padding: 0 25rpx 0 0;
+  padding: 0 ;
   box-sizing: border-box;
   align-items: center;
   -webkit-align-items: center;
@@ -29,9 +32,11 @@
   line-height: 50rpx;
 }
 .img-delete-all {
-  height:30rpx;
+  height:32rpx;
   width:28rpx;
 }
 .delete-content {
-    padding:20rpx 20rpx;
+  position: relative;
+  right: -20rpx;
+  padding:20rpx 20rpx;
 }

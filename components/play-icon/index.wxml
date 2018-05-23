@@ -1,17 +1,18 @@
-<view  wx:if="{{playType != 'loading'}}" class="play-loud-icon" >
 
-  <image  src="../../image/play_loud.png" class="play-loud-icon  play-loud-img" ></image>
+<view  class="play-loud-icon" >
+  <image  src="../../image/play_loud.png" class="play-loud-img play-icon-main {{realPlayType == 'loading' ? 'is-hide' : ''}}" ></image>
 
-  <block wx:if="{{playType=='playing'}}">
-      <image  src="../../image/play_loud_1.png" class="play-loud-icon play-loud-img play-animation "  ></image>
-      <image  src="../../image/play_loud_2.png"  class="play-loud-icon play-loud-img play-animation1"  ></image>
+  <block  wx:if="{{realPlayType != 'loading'}}">
+
+    <block wx:if="{{realPlayType=='playing'}}">
+        <image  src="../../image/play_loud_1.png" class="play-loud-img play-animation "  ></image>
+        <image  src="../../image/play_loud_2.png"  class="play-loud-img play-animation1"  ></image>
+    </block>
+    <block wx:else>
+        <image  src="../../image/play_loud_1.png" class="play-loud-img" ></image>
+    </block>
   </block>
-  <block wx:else>
-      <image  src="../../image/play_loud_1.png" class="play-loud-icon play-loud-img" ></image>
+  <block wx:else="{{realPlayType != 'loading'}}">
+    <view class="play-transition"></view>
   </block>
-
-</view>
-
-<view wx:if="{{playType=='loading'}}"  class="play-loud-icon" >
-  <image  src="../../image/loading.gif" class="play-loading-img play-loud-img" ></image>
 </view>

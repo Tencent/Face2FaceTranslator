@@ -1,7 +1,7 @@
 .modal-wrapper {
   position:relative;
   color:#FFFFFF;
-  height:32px;
+  height:70rpx;
   width:80%;
   margin: 0 auto;
   z-index:70;
@@ -10,7 +10,7 @@
 .modal-triangle {
   position:relative;
   margin: 0 auto;
-  top: 26px;
+  top: 28px;
   height:0;
   width:0;
   border:5px solid #000000;
@@ -27,7 +27,7 @@
   z-index:69
 }
 .menu-modal {
-  height:32px;
+  height:70rpx;
   font-size:14px;
   position:absolute;
   top:0;

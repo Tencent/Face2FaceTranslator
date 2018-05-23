@@ -79,12 +79,15 @@ Component({
       switch(itemType) {
         case 'copySource':
           this.setClip(item.text)
+
           break;
         case 'copyTarget':
           this.setClip(item.translateText)
+
           break
         case 'delete':
           this.deleteBubbleModal()
+
           break
         default:
           break

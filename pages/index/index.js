@@ -64,19 +64,14 @@ Page({
 
   },
 
-  longpressEvent: function(e) {
-    console.log("长按", e)
-  },
-
-
 
   /**
    * 按住按钮开始语音识别
    */
   streamRecord: function(e) {
-    console.log("streamrecord" ,e)
-    let detail = e.detail
-    let buttonItem = detail.buttonItem
+    // console.log("streamrecord" ,e)
+    let detail = e.detail || {}
+    let buttonItem = detail.buttonItem || {}
     manager.start({
       lang: buttonItem.lang,
     })
@@ -94,10 +89,6 @@ Page({
     })
     this.scrollToNew();
 
-    wx.reportAnalytics('record_and_translate_event', {
-      lfrom: buttonItem.lang,
-      lto: buttonItem.lto,
-    });
   },
 
 
@@ -106,9 +97,9 @@ Page({
    */
   streamRecordEnd: function(e) {
 
-    console.log("streamRecordEnd" ,e)
-    let detail = e.detail  // 自定义组件触发事件时提供的detail对象
-    let buttonItem = detail.buttonItem
+    // console.log("streamRecordEnd" ,e)
+    let detail = e.detail || {}  // 自定义组件触发事件时提供的detail对象
+    let buttonItem = detail.buttonItem || {}
 
     // 防止重复触发stop函数
     if(!this.data.recording || this.data.recordStatus != 0) {
@@ -139,8 +130,10 @@ Page({
       success: (resTrans)=>{
 
         let passRetcode = [
-          0, // 成功
+          0, // 翻译合成成功
           -10006, // 翻译成功，合成失败
+          -10007, // 翻译成功，传入了不支持的语音合成语言
+          -10008, // 翻译成功，语音合成达到频率限制
         ]
 
         if(passRetcode.indexOf(resTrans.retcode) >= 0 ) {
@@ -175,7 +168,11 @@ Page({
 
       },
       fail: function(resTrans) {
-        console.log("调用失败",resTrans, item)
+        console.error("调用失败",resTrans, item)
+        this.setData({
+          bottomButtonDisabled: false,
+          recording: false,
+        })
       },
       complete: resTrans => {
         this.setData({
@@ -199,15 +196,21 @@ Page({
 
     this.translateText(item, index)
 
+
+
   },
 
   /**
    * 语音文件过期，重新合成语音文件
    */
   expiredAction: function(e) {
-    let detail = e.detail  // 自定义组件触发事件时提供的detail对象
-    let item = detail.item
+    let detail = e.detail || {}  // 自定义组件触发事件时提供的detail对象
+    let item = detail.item || {}
     let index = detail.index
+
+    if(isNaN(index) || index < 0) {
+      return
+    }
 
     let lto = item.lto || 'en_US'
 
@@ -241,6 +244,18 @@ Page({
   })
   },
 
+  /**
+   * 初始化为空时的卡片
+   */
+  initCard: function () {
+    let initTranslateNew = Object.assign({}, this.data.initTranslate, {
+      create: util.recordTime(new Date()),
+    })
+    this.setData({
+      initTranslate: initTranslateNew
+    })
+  },
+
 
   /**
    * 删除卡片
@@ -253,11 +268,15 @@ Page({
     let tmpDialogList = this.data.dialogList.slice(0)
     let arrIndex = detail.index
     tmpDialogList.splice(arrIndex, 1)
+
     // 不使用setTImeout可能会触发 Error: Expect END descriptor with depth 0 but get another
     setTimeout( ()=>{
       this.setData({
         dialogList: tmpDialogList
       })
+      if(tmpDialogList.length == 0) {
+        this.initCard()
+      }
     }, 0)
 
   },
@@ -274,6 +293,7 @@ Page({
     wx.showToast({
       title: this.data.tips_language.recognize_nothing,
       icon: 'success',
+      image: '/image/no_voice.png',
       duration: 1000,
       success: function (res) {
 
@@ -409,6 +429,8 @@ Page({
 
   onShow: function() {
     this.scrollToNew();
+
+    this.initCard()
 
     if(this.data.recordStatus == 2) {
       wx.showLoading({

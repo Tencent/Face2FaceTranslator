@@ -4,9 +4,7 @@
   -webkit-justify-content: center;
   justify-content: center;
 }
-.button-wrap-shadow {
-   box-shadow: -1px 1px 7px 0 rgba(0,0,0,0.13);
-}
+
 .img-big-wrap {
   width: 100%;
   display: -webkit-flex;
@@ -14,75 +12,6 @@
   background: #FAFAFA;
 }
 
-.input-language {
-  position: absolute;
-  right: 50%;
-  bottom: 60rpx;
-  height: 159rpx;
-  width: 230rpx;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.output-language{
-  position: absolute;
-  left: 50%;
-  bottom: 60rpx;
-  height: 159rpx;
-  width: 230rpx;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: center;
-}
-.normal-record-icon {
-  height: 30rpx;
-  width: 20rpx;
-}
-.normal-record-text {
-  color: #9B9B9B;
-  font-size: 24rpx;
-  margin: 0 10rpx;
-}
-.press-record-icon {
-  height: 32rpx;
-  width: 20rpx;
-}
-.press-record-text {
-  color: #4A90E2;
-  font-size: 32rpx;
-  margin: 0 10rpx;
-}
-.record-text {
-  color: #9B9B9B;
-  font-size:24rpx;
-  text-align:center;
-  position:absolute;
-  left:50%;
-  margin-left:-160rpx;
-  width:320rpx;
-  bottom:229rpx;/*159 + 60 + 10*/
-}
-.keyboard-button {
-  height:40rpx;
-  width:48rpx;
-  position:absolute;
-  left:50%;
-  margin-left:-302rpx;/*-254 - 48*/
-  bottom:120rpx;
-}
-.keyboard-text {
-  color: #4A4A4A;
-  font-size:32rpx;
-  text-align:center;
-  position:absolute;
-  left:80%;
-  margin-left:-135rpx;
-  width:320rpx;
-  top:175rpx;
-}
 .button-container{
   display: flex;
   display: -webkit-flex;
@@ -110,7 +39,7 @@
   box-sizing: border-box;
 }
 .button-label {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #9B9B9B;
   letter-spacing: 0;
   margin: 15rpx 0 0 0;
@@ -120,7 +49,6 @@
   display: flex;
   display: -webkit-flex;
   height: 100rpx;
-  /* width: 240rpx; */
   width: 100%;
   border-radius: 100rpx;
   justify-content: center;

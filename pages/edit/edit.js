@@ -9,6 +9,8 @@ http://opensource.org/licenses/MIT
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 */
 
+const initBottomHeight = 0
+
 var app = getApp()
 Page({
 
@@ -22,6 +24,7 @@ Page({
     is_focus: false,
     tips: "",
     index: -1,
+    bottomHeight:  initBottomHeight
   },
   /**
    * 获得最大文本长度
@@ -80,11 +83,38 @@ Page({
       //文本输入为空时提示
     }
   },
+
+  /**
+   * 点击文本输入框修改底下按钮行高，让提示和按钮始终在键盘上方   *
+   */
+  editFocus: function(e) {
+    let {value, height} = e.detail
+    console.log(value, height)
+
+    if(!isNaN(height)) {
+      this.setData({
+        bottomHeight: height + initBottomHeight
+      })
+    }
+  },
+
+  /**
+   * 输入框失焦
+   */
+  editBlur: function() {
+    this.setData({
+      bottomHeight: initBottomHeight
+    })
+  },
+
   /**
    * 清空内容
    */
   deleteContent: function () {
     this.setEditText("")
+    this.setData({
+      is_focus: true
+    })
   },
 
   /**

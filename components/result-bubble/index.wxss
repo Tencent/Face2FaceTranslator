@@ -25,7 +25,7 @@
 .create-time {
   font-size:28rpx;
   color: #B2B2B2;
-  margin-bottom:5px;
+  margin-bottom:10px;
   display: flex;
   display: -webkit-flex;
   justify-content: center;
@@ -74,15 +74,15 @@
   position: absolute;
   display: flex;
   align-items: center;
-  right: 10rpx;
+  right: 8rpx;
   bottom: 0;
   padding: 0 8rpx;
   bottom: 7rpx;
 }
 
 .edit-icon-img {
-  height:31rpx;
-  width:31rpx
+  width:40rpx;
+  height:40rpx;
 }
 
 .play-icon {

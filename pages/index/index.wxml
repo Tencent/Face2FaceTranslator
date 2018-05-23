@@ -1,7 +1,6 @@
 <!--index.wxml-->
 <view class="container">
   <scroll-view id="scroll-content"
-    catchlongpress="longpressEvent"
     scroll-top="{{scroll_top}}"
     scroll-y="true"
     class="dialog-part"
@@ -28,7 +27,6 @@
 
   <view class="foot-group" catchlongpress="catchTapEvent">
     <bottom-button button-disabled="{{bottomButtonDisabled}}"
-      shadow-show="{{isScroll}}"
       bindrecordstart="streamRecord"
       bindrecordend="streamRecordEnd"></bottom-button>
   </view>

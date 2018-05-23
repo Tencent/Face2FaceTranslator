@@ -35,7 +35,6 @@ Component({
 
   // 组件生命周期函数，在组件实例被从页面节点树移除时执行
   detached: function() {
-    console.log("detach")
     this.clearAnimation()
   },
 
@@ -43,12 +42,10 @@ Component({
 
     clearAnimation: function() {
       this.endWaitAnimation()
-
-
     },
 
     /**
-     * 清楚等待区域以及翻译区域的动画
+     * 清除动画
      */
     endWaitAnimation: function() {
         clearInterval(this.data.waiting_interval)
@@ -69,7 +66,7 @@ Component({
     },
 
     /**
-     * 设置识别,翻译部分的等待动画
+     * 设置动画
      */
     setWaitInterval: function() {
        this.endWaitAnimation()

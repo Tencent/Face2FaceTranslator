@@ -1,10 +1,12 @@
 <!--pages/edit/edit.wxml-->
 <view class="container edit-container">
-  <textarea maxlength="{{edit_text_max}}" auto-height="{{true}}" class="edit_textarea" cursor-spacing="20" focus="{{is_focus}}" bindinput="editInput"  bindconfirm="editConfirm" value="{{edit_text}}"></textarea>
-  <view class="tips-wrapper">
-    <textarea class="edit-tips" value="{{tips}}" auto-height="{{true}}" disabled="{{true}}"></textarea>
-    <view class="delete-content"  bindtap="deleteContent">
-      <image src="../../image/delete_all.png" class="img-delete-all"></image>
+  <textarea maxlength="{{edit_text_max}}"  class="edit_textarea" auto-focus="{{true}}" focus="{{is_focus}}" bindinput="editInput"  bindconfirm="editConfirm" value="{{edit_text}}" adjust-position="{{true}}" bindfocus="editFocus" bindblur="editBlur"></textarea>
+  <view class="bottom-wrap" style="padding-bottom: {{bottomHeight}}px">
+    <view class="tips-wrapper" >
+      <text class="edit-tips" >{{tips}}</text>
+      <view class="delete-content"  capture-bind:tap="deleteContent" >
+        <image src="../../image/delete_all.png" class="img-delete-all"></image>
+      </view>
     </view>
   </view>
 </view>
