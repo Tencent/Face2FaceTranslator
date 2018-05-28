@@ -13,7 +13,7 @@ const app = getApp()
 
 const util = require('../../utils/util.js')
 
-const plugin = requirePlugin("WechatAI")
+const plugin = requirePlugin("WechatSI")
 
 import { language } from '../../utils/conf.js'
 
