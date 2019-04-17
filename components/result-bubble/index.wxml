@@ -30,7 +30,7 @@
         <view class="text-detail text-detail-{{item.lto}}">{{item.translateText}}<waiting-icon wx:if="{{recordStatus == 1}}"></waiting-icon>
       </view>
       </view>
-      <view class="play-icon" catchtap="playTranslateVoice" cattouchstart="playTranslateVoice" wx:if="{{recordStatus == 2}}">
+      <view class="play-icon" catchtap="playTranslateVoice" catchtouchstart="playTranslateVoice" wx:if="{{recordStatus == 2}}">
         <play-icon play-type="{{playType}}"></play-icon>
       </view>
     </view>
