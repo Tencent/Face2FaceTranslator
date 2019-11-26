@@ -1,7 +1,7 @@
 <view class="button-wrap" hidden="{{hidden}}">
   <view class="img-big-wrap">
     <view class="button-container">
-      <view wx:for="{{buttons}}" wx:for-item="button" wx:key="{{button.lang}}" class="button-item">
+      <view wx:for="{{buttons}}" wx:for-item="button" wx:key="lang" class="button-item">
         <view  catchtouchstart="streamRecord"
                catchtouchend="endStreamRecord"
                data-conf="{{button}}"

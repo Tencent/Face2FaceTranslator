@@ -1,21 +1,20 @@
 {
-  "pages":[
-
+  "pages": [
     "pages/index/index",
-
     "pages/edit/edit"
   ],
   "window": {
-      "backgroundTextStyle": "light",
-      "backgroundColor": "#FAFAFA",
-      "navigationBarBackgroundColor": "#FAFAFA",
-      "navigationBarTitleText": "面对面翻译",
-      "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#FAFAFA",
+    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarTitleText": "面对面翻译",
+    "navigationBarTextStyle": "black"
   },
   "plugins": {
     "WechatSI": {
-      "version": "0.0.6",
+      "version": "0.3.3",
       "provider": "wx069ba97219f66d99"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

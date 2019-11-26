@@ -13,8 +13,10 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "",
-	"projectname": "Face-2-Face Translator",
+	"projectname": "Face-2-Face%20Translator",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
